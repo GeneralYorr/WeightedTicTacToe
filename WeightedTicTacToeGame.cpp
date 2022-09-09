@@ -234,14 +234,14 @@ bool WeightedTicTacToeGame::_isGameOver()  // can improve by doing rows and colu
 	// finally check diagnals. \ diagonal first
 	if (_board.isPieceAt(0, 0)) {
 		gameWon = true;
-			playerToken = _board.getSymbolAt(0, 0);
+		playerToken = _board.getSymbolAt(0, 0);
 
-			for (int i = 1; i < _DIMENSIONS; ++i) {
-				if (!_board.isPieceAt(i,i) || _board.getSymbolAt(i, i) != playerToken) {
-					gameWon = false; // the row isn't all the same so
-						break; //break from the loop
-				}
+		for (int i = 1; i < _DIMENSIONS; ++i) {
+			if (!_board.isPieceAt(i,i) || _board.getSymbolAt(i, i) != playerToken) {
+				gameWon = false; // the row isn't all the same so
+					break; //break from the loop
 			}
+		}
 
 		if (gameWon) return true;
 	}
@@ -254,7 +254,7 @@ bool WeightedTicTacToeGame::_isGameOver()  // can improve by doing rows and colu
 		playerToken = _board.getSymbolAt(0, _DIMENSIONS - 1);
 
 		for (int i = 1; i < _DIMENSIONS; ++i) {
-			if (_board.isPieceAt(i, _DIMENSIONS - 1 - i) || _board.getSymbolAt(i, _DIMENSIONS - 1 - i) != playerToken) {
+			if (!_board.isPieceAt(i, _DIMENSIONS - 1 - i) || _board.getSymbolAt(i, _DIMENSIONS - 1 - i) != playerToken) {
 				gameWon = false; // the row isn't all the same so
 				break; //break from the loop
 			}

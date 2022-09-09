@@ -1,8 +1,11 @@
 # WeightedTicTacToe
 
 Game called end at
+
 1(3)  2(3)  1(3)
+
 1(2)  
+
 2(1)        2(3)
 
 Did first row overlapping with larger pieces
